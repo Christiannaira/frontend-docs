@@ -6,42 +6,39 @@
     <title>Document</title>
     <style>
 
-    * {
-        box-sizing: border-box;
-        margin: 0;
-    }        
-    
-    body {
-        font-family: 'Lato', sans-serif;
-    }
+        * {
+            box-sizing: border-box;
+        }
 
-    .tablink {
-        background-color: #555;
-        color: white;
-        float: left;
-        border: none;
-        outline: none;
-        cursor: pointer;
-        padding: 14px 16px;
-        font-size: 17px;
-        width: 25%;
-    }
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
 
-    .tablink:hover {
-        background-color: #777;
-    }
+        .tablink {
+            background-color: #555;
+            color: white;
+            float: left;
+            width: 25%;
+            border: none;
+            outline: none;
+            padding: 14px 16px;
+            cursor: pointer;
+            font-size: 17px;
+        }
 
-    .tabcontent {
-        color: white;
-        display: none;
-        padding: 50px;
-        text-align: center;
-    }
+        .tabcontent {
+            color: white;
+            display: none;
+            padding: 100px 20px;
+            height: 100%;
+        }
 
-    #London {background-color: red;}
-    #Paris {background-color: green;}
-    #Tokyo {background-color: blue;}
-    #Oslo {background-color: orange;}
+        #Home {background-color: red;}
+        #News {background-color: green;}
+        #Contact {background-color: blue;}
+        #About {background-color: orange;}
 
     </style>
 
@@ -49,52 +46,50 @@
 </head>
 <body>
     
-<div id="London" class="tabcontent">
-  <h1>London</h1>
-  <p>London is the capital city of England.</p>
-</div>
+    <button class="tablink" onclick="openPage('Home', this, 'red')" id="defaultOpen">Home</button>
+    <button class="tablink" onclick="openPage('News', this, 'green')">News</button>
+    <button class="tablink" onclick="openPage('Contact', this, 'blue')">Contact</button>
+    <button class="tablink" onclick="openPage('About', this, 'orange')">About</button>
 
-<div id="Paris" class="tabcontent">
-  <h1>Paris</h1>
-  <p>Paris is the capital of France.</p> 
-</div>
+    <div id="Home" class="tabcontent">
+        <h3>Home</h3>
+        <p>Home is where the heart is..</p>
+    </div>
 
-<div id="Tokyo" class="tabcontent">
-  <h1>Tokyo</h1>
-  <p>Tokyo is the capital of Japan.</p>
-</div>
+    <div id="News" class="tabcontent">
+        <h3>News</h3>
+        <p>Some news this fine day!</p> 
+    </div>
 
-<div id="Oslo" class="tabcontent">
-  <h1>Oslo</h1>
-  <p>Oslo is the capital of Norway.</p>
-</div>
-
-<button class="tablink" onclick="openCity('London', this, 'red')" id="defaultOpen">London</button>
-<button class="tablink" onclick="openCity('Paris', this, 'green')">Paris</button>
-<button class="tablink" onclick="openCity('Tokyo', this, 'blue')">Tokyo</button>
-<button class="tablink" onclick="openCity('Oslo', this, 'orange')">Oslo</button>
+    <div id="Contact" class="tabcontent">
+        <h3>Contact</h3>
+        <p>Get in touch, or swing by for a cup of coffee.</p>
+    </div>
+    
+    <div id="About" class="tabcontent">
+        <h3>About</h3>
+        <p>Who we are and what we do.</p>
+    </div>
 
 
 <script>
 
-   function openCity(cityName, elmnt, color) {
+   function openPage(pageName, elmnt, color) {
 
-        var i, tabcontent, tablink; 
+    let i, tabcontent, tablinks; 
 
-        tabcontent = document.getElementsByClassName("tabcontent");
-        
-        for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
-        }
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
 
-        tablink = document.getElementsByClassName("tablink");
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i< tablinks.length; i++) {
+        tablinks[i].style.backgroundColor = "";
+    }
 
-        for (i = 0; i < tablink.length; i++) {
-            tablink[i].style.backgroundColor = "";
-        }
-
-        document.getElementById(cityName).style.display = "block";
-        elmnt.style.backgroundColor = color;
+    document.getElementById(pageName).style.display = "block";
+    elmnt.style.backgroundColor = color;
 
    }
 
