@@ -79,18 +79,18 @@
 
    function openCity(cityName, elmnt, color) {
 
-        var i, tabcontent, tablinks;
+        var i, tabcontent, tablink; 
 
         tabcontent = document.getElementsByClassName("tabcontent");
-
+        
         for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none"
+            tabcontent[i].style.display = "none";
         }
 
-        tablinks = document.getElementsByClassName("tablink");
+        tablink = document.getElementsByClassName("tablink");
 
-        for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].style.backgroundColor = "";
+        for (i = 0; i < tablink.length; i++) {
+            tablink[i].style.backgroundColor = "";
         }
 
         document.getElementById(cityName).style.display = "block";
@@ -99,6 +99,9 @@
    }
 
    document.getElementById("defaultOpen").click();
+
+
+
 
 </script>
    
