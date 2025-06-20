@@ -1,0 +1,27 @@
+        // by id
+        // const element = document.getElementById("intro");
+        // document.getElementById("demo").innerHTML = element.innerHTML;
+
+        // by tag name
+        // const element = document.getElementsByTagName("p");
+        // document.getElementById("demo").innerHTML = `The text in first paragraph (index 0) is: ` + element[0].innerHTML;
+
+        // by class name
+        // const x = document.getElementsByClassName("intro");
+        // document.getElementById("demo").innerHTML = `The first paragraph (index 0) is ` + x[0].innerHTML;
+
+        // all html elements that match a specified CSS selector
+        // const x = document.querySelectorAll("p.intro");
+        // document.getElementById("demo").innerHTML = `The first paragraph (index 0) with class intro="intro" is: ` + x[0].innerHTML;
+
+        // html object collection.
+        // const x = document.forms["frm1"];
+
+        // let text = "";
+        // for (let i = 0; i < x.length; i++) {
+        //     text += x.elements[i].value + "<br>";
+        // }
+
+        // document.getElementById("demo").innerHTML = text;
+
+        // document.getElementById("demo").innerHTML = document.querySelector("h2.hello").innerHTML;
