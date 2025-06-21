@@ -7,34 +7,55 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
 
-        .navbar {
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .row {
+            display: flex;
+        }
+
+        .left {
+            flex: 35%;
+        }
+
+        .left h2 {
+            padding-left: 8px;
+        }
+
+        .right {
+            flex: 65%;
+            padding: 15px;
+        }
+
+        #mySearch {
             width: 100%;
-            background-color: #555;
-            overflow: auto;
+            font-size: 18px;
+            padding: 11px;
+            border: 1px solid #ddd;
         }
 
-        .navbar a {
-            float: left;
+        #myMenu {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #myMenu li a {
             padding: 12px;
-            color: white;
             text-decoration: none;
-            font-size: 17px;
+            color: black;
+            display: block;
         }
 
-        .navbar a:hover {
-            background-color: #000;
+        #myMenu li a:hover {
+            background-color: #eee;
         }
 
-        .active {
-            background-color: #04AA6D;
-        }
-
-        @media screen and (max-width: 500px) {
-            .navbar a {
-                float: none;
-                display: block;
-            }
-        }
 
 
     </style>
@@ -42,20 +63,63 @@
 
 </head>
 <body>
-    
 
-<div class="navbar">
-    <a href="#" class="active"><i class="fa fa-fw fa-home"></i> Home</a>
-    <a href="#"><i class="fa fa-fw fa-search"></i> Search</a>
-    <a href="#"><i class="fa fa-fw fa-envelope"></i> Contact</a>
-    <a href="#"><i class="fa fa-fw fa-user"></i> Login</a>
-</div>
+    <div class="row">
+
+        <div class="left" style="background-color: #bbb;">
+
+            <h2>Menu</h2>
+            <input type="text" id="mySearch" placeholder="Search" title="Type in a category" onkeyup="myFunction()">
+            
+            <div id="myMenu">
+
+                <li><a href="#">HTML</a></li>
+                <li><a href="#">CSS</a></li>
+                <li><a href="#">JavaScript</a></li>
+                <li><a href="#">PHP</a></li>
+                <li><a href="#">Python</a></li>
+                <li><a href="#">jQuery</a></li>
+                <li><a href="#">SQL</a></li>
+                <li><a href="#">Node.js</a></li>
+
+            </div>
+
+        </div>
+
+        <div class="right" style="background-color: #ddd;">
+
+            <h2>Page Content</h2>
+            <p>Start to type for a specific category inside the search bar to "filter" the search options.</p>
+            <p>Some text..Some text..Some text..Some text..Some text..Some text..Some text..Some text..</p>
+            <p>Some other text..Some text..Some text..Some text..Some text..Some text..Some text..Some text..</p>
+            <p>Some text..</p>
+
+        </div>
+
+    </div>
 
 <script>
 
-  
-    
+    function myFunction() {
+        var input, filter, ul, li, a, i;
 
+        input = document.getElementById("mySearch");
+        filter = input.value.toUpperCase();
+        ul = document.getElementById("myMenu");
+        li = ul.getElementsByTagName("li");
+
+        for (i = 0; i < li.length; i++) {
+
+            a = li[i].getElementsByTagName("a")[0];
+
+            if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                li[i].style.display = "";
+            } else {
+                li[i].style.display = "none";
+            }
+
+        }
+    }
 
 </script>
    
