@@ -15,9 +15,10 @@
             }
 
             .overlay {
-                height: 0%;
+                height: 100%;
                 width: 100%;
                 position: fixed;
+                display: none;
                 z-index: 1;
                 top: 0;
                 left: 0;
@@ -88,11 +89,11 @@
       <script>
 
         function openNav() {
-            document.getElementById("myNav").style.height = "100%";
+            document.getElementById("myNav").style.display = "block";
         }
 
         function closeNav() {
-            document.getElementById("myNav").style.height = "0%";
+            document.getElementById("myNav").style.display = "none";
         }
 
       </script>
