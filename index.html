@@ -1,101 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Document</title>
-      <link
-         rel="stylesheet"
-         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-      />
-      <style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
 
-            body {
-                font-family: "Lato", sans-serif;
+        body {
+            font-family: "Lato", sans-serif;
+        }
+
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidenav a:hover {
+            color: #f1f1f1;
+        }
+
+        .sidenav .closebtn {
+            color: #f1f1f1;
+        }
+
+        .sidenav a:hover {
+            color: #f1f1f1;
+        }
+
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        #main {
+            transition: margin-left .5s;
+            padding: 16px;
+        }
+
+        @media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 15px;
             }
 
-            .overlay {
-                height: 100%;
-                width: 100%;
-                position: fixed;
-                display: none;
-                z-index: 1;
-                top: 0;
-                left: 0;
-                background-color: rgb(0,0,0);
-                background-color: rgb(0,0,0,0.9);
-                overflow-x: hidden;
-                transition: 0.5s;
+            .sidenav a {
+                font-size: 18px;
             }
+        }
 
-            .overlay-content {
-                position: relative;
-                top: 25%;
-                width: 100%;
-                text-align: center;
-                margin-top: 30px;
-            }
-
-            .overlay a {
-                padding: 8px;
-                text-decoration: none;
-                font-size: 36px;
-                color: #818181;
-                display: block;
-                transition: 0.3s;
-            }
-
-            .overlay a:hover, .overlay a:focus {
-                color: #f1f1f1;
-            }
-
-            .overlay .closebtn {
-                position: absolute;
-                top: 20px;
-                right: 45px;
-                font-size: 60px;
-            }
-
-            @media screen and (max-height: 450px) {
-                .overlay a {
-                    font-size: 20px;
-                }
-
-                .overlay .closebtn {
-                    font-size: 40px;
-                    top: 15px;
-                    right: 35px;
-                }
-            }
-
-      </style>
-   </head>
-   <body>
+    </style>
+</head>
+<body>
     
-    <div id="myNav" class="overlay">
-
-        <a href="javascript:void[0]" class="closebtn" onclick="closeNav()">&times;</a>
-        <div class="overlay-content">
+    <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0);" class="closebtn" onclick="closeNav();">&times;</a>
             <a href="#">About</a>
             <a href="#">Services</a>
             <a href="#">Clients</a>
             <a href="#">Contact</a>
-        </div>
-
     </div>
 
-    <span style="font-size: 30px; cursor: pointer;" onclick="openNav()">&#9776; Open</span>
+    <div id="main">
+        <h2>Sidenav Push Example</h2>
+  <p>Click on the element below to open the side navigation menu, and push this content to the right.</p>
+  <span style="font-size: 30px; cursor: pointer;" onclick="openNav();">&#9776; open</span>
+    </div>
 
-      <script>
+    <script>
 
         function openNav() {
-            document.getElementById("myNav").style.display = "block";
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
         }
 
         function closeNav() {
-            document.getElementById("myNav").style.display = "none";
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
         }
 
-      </script>
-   </body>
+    </script>
+
+</body>
 </html>
