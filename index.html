@@ -10,81 +10,118 @@
       />
       <style>
 
+        body {
+            font-family: "Lato", sans-serif;
+        }
+
+        .sidenav {
+            height: 100%;
+            width: 200px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            padding-top: 20px;
+        }
+
+        .sidenav a, .dropdown-btn {
+            padding: 6px 8px 6px 16px;
+            text-decoration: none;
+            font-size: 20px;
+            color: #818181;
+            display: block;
+            background: none;
+            width: 100%;
+            text-align: left;
+            cursor: pointer;
+            outline: none;
+            border: none;
+        }
+
+        .sidenav a:hover, .dropdown-btn:hover {
+            color: #f1f1f1;
+        }
+
+        .main {
+            margin-left: 200px;
+            font-size: 20px;
+            padding: 0px 10px0;
+        }
+
+        .active {
+            background-color: green;
+            color: white;
+        }
+
+        .dropdown-container {
+            background-color: #262626;
+            padding-left: 8px;
+            display: none;
+        }
+
+        .fa-caret-down {
+            float: right;
+            padding-right: 8px;
+        }
+
+        @media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 15px;
+            }
+
+            .sidenav a {
+                font-size: 18px;
+            }
+        }
 
       </style>
    </head>
    <body>
+      <div class="sidenav">
+         <a href="">About</a>
+         <a href="">Services</a>
+         <a href="">Clients</a>
+         <a href="">Contact</a>
+         <button class="dropdown-btn">Dropdown  <i class="fa fa-caret-down"></i></button>
+         <div class="dropdown-container">
+            <a href="">Link 1</a>
+            <a href="">Link 2</a>
+            <a href="">Link 3</a>
+         </div>
+         <a href="">Search</a>
+      </div>
 
-        <form name="form1" id="form1" action="/action_page.php">
-
-            Subjects: 
-            <select name="subject" id="subject">
-                <option value="" selected="selected">Select subject</option>
-            </select>
-            <br><br>
-            Topics:
-            <select name="topic" id="topic">
-                <option value="" selected="selected">Please select subject first</option>
-            </select>
-            <br><br>
-            Chapters: 
-            <select name="chapter" id="chapter">
-                <option value="" selected="selected">Please select topic first</option>
-            </select>
-            <br><br>
-            <input type="submit" value="Submit">
-
-        </form>
+      <div class="main">
+         <h2>Sidebar Dropdown</h2>
+         <p>
+            Click on the dropdown button to open the dropdown menu inside the
+            side navigation.
+         </p>
+         <p>This sidebar is of full height (100%) and always shown.</p>
+         <p>Some random text..</p>
+      </div>
 
       <script>
 
-        var subjectObject = {
-            "Front-end": {
-                "HTML": ["Links", "Images", "Tables", "Lists"],
-                "CSS": ["Borders", "Margins", "Backgrounds", "Float"],
-                "JavaScript": ["Variables", "Operators", "Functions", "Conditions"]
-            },
-            "Back-end" : {
-                "PHP": ["Variables", "Strings", "Arrays"],
-                "SQL": ["SELECT", "UPDATE", "DELETE"]
-            }
-        };
+        var dropdown = document.getElementsByClassName("dropdown-btn");
+        var i;
 
-        window.onload = function() {
-            handleForm();
-        }
+        for (i = 0; i < dropdown.length; i++) {
 
-        function handleForm() {
+            dropdown[i].addEventListener("click", function() {
+                this.classList.toggle("active");
 
-            var subjectSel = document.getElementById("subject");
-            var topicSel = document.getElementById("topic");
-            var chapterSel = document.getElementById("chapter");
-
-            for (var x in subjectObject) {
-                subjectSel.options[subjectSel.options.length] = new Option(x, x);
-            }
-
-            subjectSel.onchange = function() {
-
-                chapterSel.length = 1;
-                topicSel.length = 1;
-
-                for (var y in subjectObject[this.value]) {
-                    topicSel.options[topicSel.options.length] = new Option(y, y);
+                var dropdownContent = this.nextElementSibling;
+                if (dropdownContent.style.display === "block") {
+                    
+                    dropdownContent.style.display = "none";
+                } else {
+                    dropdownContent.style.display = "block";
                 }
 
-            }
-
-            topicSel.onchange = function() {
-
-                chapterSel.length = 1;
-
-                var z = subjectObject[subjectSel.value][this.value];
-                for (var i = 0; i < z.length; i++) {
-                    chapterSel.options[chapterSel.options.length] = new Option(z[i], z[i]);
-                }
-
-            }
+            });
 
         }
 
