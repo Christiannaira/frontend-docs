@@ -4,54 +4,63 @@
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>Document</title>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link
+         rel="stylesheet"
+         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      />
       <style>
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
 
         .topnav {
             overflow: hidden;
-            background-color: #f1f1f1;
+            background-color: #333;
         }
 
         .topnav a {
             float: left;
-            display: block;
-            color: black;
+            color: #f2f2f2;
             text-align: center;
             padding: 14px 16px;
             text-decoration: none;
             font-size: 17px;
-            border-bottom: 3px solid transparent;
         }
 
         .topnav a:hover {
-            border-bottom: 3px solid red;
+            background-color: #ddd;
+            color: black;
         }
 
         .topnav a.active {
-            border-bottom: 3px solid red;
+            background-color: #04AA6D;
+            color: black;
+        }
+
+        .topnav-right {
+            float: right;
         }
 
       </style>
    </head>
    <body>
-      
-        <div class="topnav">
+      <div class="topnav">
+         <a href="" class="active">Home</a>
+         <a href="">News</a>
+         <a href="">Contact</a>
+         <div class="topnav-right">
+            <a href="">Search</a>
+            <a href="">About</a>
+         </div>
+      </div>
 
-            <a href="#home" class="active">Home</a>
-            <a href="#news">News</a>
-            <a href="#contact">Contact</a>
+      <div style="padding-left: 16px">
+         <h2>Top Navigation with Right Aligned Links</h2>
+         <p>Some content..</p>
+      </div>
 
-        </div>
-
-        <div style="padding-left: 16px;">
-              <h2>Border Links</h2>
-  <p>Hover over the links.</p>
-        </div>
-
-      <script>
-
-
-
-      </script>
+      <script></script>
    </body>
 </html>
