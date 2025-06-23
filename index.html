@@ -10,88 +10,87 @@
       />
       <style>
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        .navbar {
-            overflow: hidden;
-            background-color: #333;
-        }
-
-        .navbar a {
-            float: left;
-            font-size: 16px;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
-
-         .dropbtn {
-            background-color: #04aa6d;
+        .dropbtn {
+            background-color: #3498DB;
             color: white;
             padding: 16px;
             font-size: 16px;
             border: none;
-            outline: none;
-            font-family: inherit;
-            background-color: inherit;
-            margin: 0;
-         }
+            cursor: pointer;
+        }
 
-         .navbar a:hover, .dropdown:hover .dropbtn {
-            background-color: red;
-         }
+        .dropbtn:hover, .dropbtn:focus {
+            background-color: #2980B9;
+        }
 
-         .dropdown {
-            float: left;
+        .dropdown {
+            position: relative;
             display: inline-block;
-         }
+        }
 
-         .dropdown-content {
+        .dropdown-content {
             display: none;
             position: absolute;
             background-color: #f1f1f1;
             min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            overflow: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
             z-index: 1;
-         }
+        }
 
-         .dropdown-content a {
-            float: none;
+        .dropdown-content a {
             color: black;
             padding: 12px 16px;
             text-decoration: none;
             display: block;
-            text-align: left;
-         }
+        }
 
-         .dropdown-content a:hover {
-            background-color: #ddd;
-         }
+        .dropdown a:hover {
+           background-color: #ddd;
+        }
 
-         .dropdown:hover .dropdown-content {
+        .show {
             display: block;
-         }
+        }
 
       </style>
    </head>
    <body>
-      <div class="navbar">
-         <a href="">Home</a>
-         <a href="">News</a>
-         
-         <div class="dropdown">
-            <button class="dropbtn">Dropdown  <i class="fa fa-caret-down"></i></button>
-            <div class="dropdown-content">
-               <a href="">Link 1</a>
-               <a href="">Link 2</a>
-               <a href="">Link 3</a>
-            </div>
-         </div>
-      </div>
 
-      <script></script>
+    <div class="dropdown">
+        <button class="dropbtn" onclick="myFunction()">Dropdown</button>
+        <div id="myDropdown" class="dropdown-content">
+            <a href="">Home</a>
+            <a href="">About</a>
+            <a href="">Contact</a>
+        </div>
+    </div>
+
+      <script>
+
+        function myFunction() {
+            document.getElementById("myDropdown").classList.toggle("show");
+        }
+
+
+        window.onclick = function(event) {
+
+            if (!event.target.matches('.dropbtn')) {
+
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+
+                    if (openDropdown.classList.contains("show")) {
+                        openDropdown.classList.remove("show");
+                    }
+                }
+
+            }
+
+        }
+      </script>
    </body>
 </html>
