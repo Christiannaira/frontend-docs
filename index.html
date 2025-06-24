@@ -23,8 +23,8 @@
         let language = "JavaScript";
 
         let text = "";
-        for (let x of language) {
-            text += x + "<br>";
+        for (let i in language) {
+            text += language[i] + "<br>";
         }
 
         document.getElementById("demo").innerHTML = text;
