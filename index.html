@@ -20,15 +20,16 @@
     
     <script>
 
-        const numbers = [45, 4, 9, 16, 25];
+        const cars = ["BMW", "Volvo", "Mini"];
 
-        let txt = "";
-        numbers.forEach(myFunction);
-        document.getElementById("demo").innerHTML = txt;
-
-        function myFunction(value, index, array) {
-            txt += value + "<br>";
+        let text = "";
+        for (let x of cars) {
+            text += x + "<br>";
         }
+
+        document.getElementById("demo").innerHTML = text;
+
+
 
     </script>
 </body>
