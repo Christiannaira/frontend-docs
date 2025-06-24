@@ -9,114 +9,63 @@
          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
       />
       <style>
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            margin: 0;
-        }
-
-        .navbar {
-            overflow: hidden;
-            background-color: #333;
-        }
-
-        .navbar a {
-            float: left;
-            font-size: 16px;
+         .dropbtn {
+            background-color: #3498db;
             color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
-
-        .subnav {
-            float: left;
-            overflow: hidden;
-        }
-
-        .subnav .subnavbtn {
+            padding: 16px;
             font-size: 16px;
             border: none;
-            outline: none;
-            color: white;
-            padding: 14px 16px;
-            background-color: inherit;
-            font-family: inherit;
-            margin: 0;
-        }
+         }
 
-        .navbar a:hover, .subnav:hover .subnav {
-            background-color: red;
-        }
+         .dropup {
+            position: relative;
+            display: inline-block;
+         }
 
-        .subnav-content {
-            position: absolute;
-            left: 0;
-            background-color: red;
-            width: 100%;
-            z-index: 1;
+         .dropup-content {
             display: none;
-        }
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            bottom: 50px;
+            z-index: 1;
+         }
 
-        .subnav-content a {
-            float: left;
-            color: white;
-            text-decoration: none;
-        }
-
-        .subnav-content a:hover {
-            background-color: #eee;
+         .dropup-content a {
             color: black;
-        }
-
-        .subnav:hover .subnav-content {
+            padding: 12px 16px;
+            text-decoration: none;
             display: block;
-        }
+         }
 
+         .dropup-content a:hover {
+            background-color: #ccc;
+         }
+
+         .dropup:hover .dropup-content {
+            display: block;
+         }
+
+         .dropup:hover .dropbtn {
+            background-color: #2980b9;
+         }
       </style>
    </head>
    <body>
+      <h2>Hoverable Dropup</h2>
+      <p>Example text...</p>
+      <p>Example text...</p>
+      <p>Move the mouse over the button to open the dropup menu.</p>
 
-    <div class="navbar">
-        <a href="#home">Home</a>
-        <div class="subnav">
-            <button class="subnavbtn">About <i class="fa fa-caret-down"></i></button>
-            <div class="subnav-content">
-                <a href="">Company</a>
-                <a href="">Team</a>
-                <a href="">Careers</a>
-            </div>
-        </div>
-        <div class="subnav">
-            <button class="subnavbtn">Services <i class="fa fa-caret-down"></i></button>
-            <div class="subnav-content">
-                <a href="">Bring</a>
-                <a href="">Deliver</a>
-                <a href="">Package</a>
-                <a href="">Express</a>
-            </div>
-        </div>
-        <div class="subnav">
-            <button class="subnavbtn">Partners <i class="fa fa-caret-down"></i></button>
-            <div class="subnav-content">
-                <a href="">Link 1</a>
-                <a href="">Link 2</a>
-                <a href="">Link 3</a>
-                <a href="">Link 4</a>
-            </div>
-        </div>
-        <a href="">Contact</a>
-    </div>
+      <div class="dropup">
+         <button class="dropbtn">Dropup</button>
+         <div class="dropup-content">
+            <a href="">Link 1</a>
+            <a href="">Link 2</a>
+            <a href="">Link 3</a>
+         </div>
+      </div>
 
-    <div style="padding: 0 16px;">
-  <h3>Subnav/dropdown menu inside a Navigation Bar</h3>
-  <p>Hover over the "about", "services" or "partners" link to see the sub navigation menu.</p>
-    </div>
-   
-      <script>
-
-      
-
-      </script>
+      <script></script>
    </body>
 </html>
