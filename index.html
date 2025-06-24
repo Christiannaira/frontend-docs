@@ -20,11 +20,11 @@
     
     <script>
 
-        const cars = ["BMW", "Volvo", "Saab", "Ford", "Fiat", "Audi"];
+        const person = {fname: "John", lname: "Doe", age: 25};
 
         let text = "";
-        for (let i = 0; i < cars.length; i++) {
-            text += cars[i] + "<br>";
+        for (let x in person) {
+            text += person[x] + " ";
         }
 
         document.getElementById("demo").innerHTML = text;
