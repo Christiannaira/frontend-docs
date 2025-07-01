@@ -10,27 +10,61 @@
       />
       <style>
 
-            .flex-container {
-                display: flex;
-                background-color: dodgerblue;
-            }
+         .btn {
+            border: none;
+            color: white;
+            padding: 14px 28px;
+            font-size: 16px;
+            cursor: pointer;
+         }
 
-            .flex-container > div {
-                background-color: #f1f1f1;
-                padding: 20px;
-                font-size: 30px;
-            }
+         .success {
+            background-color: #04AA6D;
+         }
+         .success:hover {
+            background-color: #46a049;
+         }
+
+         .info {
+            background-color: #2196F3;
+         }
+         .info:hover {
+            background-color: #0b7dda;
+         }
+
+         .warning {
+            background-color: #ff9800;
+         }
+         .warning:hover {
+            background-color: #e68a00;
+         }
+
+         .danger {
+            background-color: #f44336;
+         }
+         .danger:hover {
+            background-color: #da190b;
+         }
+
+         .default {
+            background-color: #e7e7e7;
+            color: black;
+         }
+         .default:hover {
+            background-color: #ddd;
+         }
 
       </style>
    </head>
    <body>
 
+      <h1>Alert Buttons</h1>
 
-      <div class="flex-container">
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
-      </div>
+      <button class="btn success">Success</button>
+      <button class="btn info">Info</button>
+      <button class="btn warning">Warning</button>
+      <button class="btn danger">Danger</button>
+      <button class="btn default">Default</button>
 
       <script></script>
    </body>
